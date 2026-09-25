@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.eggs/
+*.egg-info/
+build/
+dist/
+out/
+fixtures/demo.mp4
+fixtures/_seg*.mp4
+fixtures/_list.txt
+.pytest_cache/

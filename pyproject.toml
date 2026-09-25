@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clipcut"
+version = "0.1.0"
+description = "Long MP4 in, viral clips + chapters + captions out — CPU-only, no editor, no GPU."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["video", "ffmpeg", "whisper", "cli", "shorts", "captions"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+captions = ["faster-whisper>=1.0"]
+
+[project.scripts]
+clipcut = "clipcut.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+markers = [
+  "captions: requires the optional faster-whisper extra",
+]
